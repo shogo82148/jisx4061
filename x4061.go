@@ -4,6 +4,8 @@ import (
 	"unicode/utf8"
 )
 
+//go:generate go run gen/main.go
+
 type class int
 
 const (
