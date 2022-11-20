@@ -1,10 +1,129 @@
 package jisx4061
 
 import (
+	"fmt"
+	"sort"
 	"unicode/utf8"
 )
 
 type class int
+
+func Print() {
+	var runes = []rune{}
+	for r := range table {
+		runes = append(runes, r)
+	}
+	sort.Slice(runes, func(i, j int) bool {
+		if table[runes[i]].class != table[runes[j]].class {
+			return table[runes[i]].class < table[runes[j]].class
+		}
+		if table[runes[i]].order != table[runes[j]].order {
+			return table[runes[i]].order < table[runes[j]].order
+		}
+		if table[runes[i]].voiced != table[runes[j]].voiced {
+			return table[runes[i]].voiced < table[runes[j]].voiced
+		}
+		if table[runes[i]].symbolType != table[runes[j]].symbolType {
+			return table[runes[i]].symbolType < table[runes[j]].symbolType
+		}
+		if table[runes[i]].kanaType != table[runes[j]].kanaType {
+			return table[runes[i]].kanaType < table[runes[j]].kanaType
+		}
+		if table[runes[i]].diacriticalMark != table[runes[j]].diacriticalMark {
+			return table[runes[i]].diacriticalMark < table[runes[j]].diacriticalMark
+		}
+		if table[runes[i]].letterCase != table[runes[j]].letterCase {
+			return table[runes[i]].letterCase < table[runes[j]].letterCase
+		}
+		return runes[i] < runes[j]
+	})
+
+	fmt.Println("文字\t文字クラス\t番号\tダイアクリティカルマーク\t大小\t清濁\t記号種別\t仮名種別")
+	for _, r := range runes {
+		attr := table[r]
+		fmt.Printf("%c\t", r)
+		switch attr.class {
+		case classSpace:
+			fmt.Printf("スペース")
+		case classDescriptor:
+			fmt.Printf("記述記号")
+		case classBracket:
+			fmt.Printf("括弧記号")
+		case classScience:
+			fmt.Printf("学術記号")
+		case classGeneral:
+			fmt.Printf("一般記号")
+		case classUnit:
+			fmt.Printf("単位記号")
+		case classNumber:
+			fmt.Printf("アラビア数字")
+		case classSymbol:
+			fmt.Printf("欧字記号")
+		case classAlphabet:
+			fmt.Printf("ラテンアルファベット")
+		case classKana:
+			fmt.Printf("仮名")
+		case classKanji:
+			fmt.Printf("漢字")
+		case classGeta:
+			fmt.Printf("げた記号")
+		}
+
+		fmt.Printf("\t%d", attr.order)
+
+		fmt.Printf("\t")
+		if attr.letterCase != letterCaseNone {
+			switch attr.diacriticalMark {
+			case diacriticalMarkNone:
+				fmt.Print("ダイアクリティカルマークなし")
+			case diacriticalMarkMacron:
+				fmt.Print("マクロン付き")
+			case diacriticalMarkCircumflexAccent:
+				fmt.Print("サーカムフレックスアクセント付き")
+			}
+		}
+
+		fmt.Printf("\t")
+		switch attr.letterCase {
+		case letterCaseLower:
+			fmt.Print("大文字")
+		case letterCaseUpper:
+			fmt.Print("小文字")
+		}
+
+		fmt.Printf("\t")
+		switch attr.voiced {
+		case voicedUnvoiced:
+			fmt.Print("清音")
+		case voicedVoiced:
+			fmt.Print("濁音")
+		case voicedSemivoiced:
+			fmt.Print("半濁音")
+		}
+
+		fmt.Printf("\t")
+		switch attr.symbolType {
+		case symbolTypeUpper:
+			fmt.Print("大文字")
+		case symbolTypeLower:
+			fmt.Print("小文字")
+		case symbolTypeRepeat:
+			fmt.Print("繰返し記号")
+		case symbolTypeLongVowel:
+			fmt.Print("長音記号")
+		}
+
+		fmt.Print("\t")
+		switch attr.kanaType {
+		case kanaTypeHigagana:
+			fmt.Print("平仮名")
+		case kanaTypeKatakana:
+			fmt.Print("片仮名")
+		}
+
+		fmt.Println()
+	}
+}
 
 const (
 	classSpace      class = iota + 1 // スペース

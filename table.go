@@ -183,9 +183,201 @@ var table = map[rune]attr{
 		order: 1,
 	},
 
-	// TODO: 学術記号
+	// 学術記号
+	'＋': {
+		class: classScience,
+		order: 1,
+	},
+	'－': {
+		class: classScience,
+		order: 2,
+	},
+	'±': {
+		class: classScience,
+		order: 3,
+	},
+	'×': {
+		class: classScience,
+		order: 4,
+	},
+	'÷': {
+		class: classScience,
+		order: 5,
+	},
+	'＝': {
+		class: classScience,
+		order: 6,
+	},
+	'≠': {
+		class: classScience,
+		order: 7,
+	},
+	'＜': {
+		class: classScience,
+		order: 8,
+	},
+	'＞': {
+		class: classScience,
+		order: 9,
+	},
+	'≦': {
+		class: classScience,
+		order: 10,
+	},
+	'≧': {
+		class: classScience,
+		order: 11,
+	},
+	'≒': {
+		class: classScience,
+		order: 12,
+	},
+	'≪': {
+		class: classScience,
+		order: 13,
+	},
+	'≫': {
+		class: classScience,
+		order: 14,
+	},
+	'∝': {
+		class: classScience,
+		order: 15,
+	},
+	'∞': {
+		class: classScience,
+		order: 16,
+	},
+	'∂': {
+		class: classScience,
+		order: 17,
+	},
+	'∇': {
+		class: classScience,
+		order: 18,
+	},
+	'√': {
+		class: classScience,
+		order: 19,
+	},
+	'∫': {
+		class: classScience,
+		order: 20,
+	},
+	'∬': {
+		class: classScience,
+		order: 21,
+	},
+	'∠': {
+		class: classScience,
+		order: 22,
+	},
+	'⊥': {
+		class: classScience,
+		order: 23,
+	},
+	'⌒': {
+		class: classScience,
+		order: 24,
+	},
+	'≡': {
+		class: classScience,
+		order: 25,
+	},
+	'∽': {
+		class: classScience,
+		order: 26,
+	},
+	'∈': {
+		class: classScience,
+		order: 27,
+	},
+	'∋': {
+		class: classScience,
+		order: 28,
+	},
+	'⊆': {
+		class: classScience,
+		order: 29,
+	},
+	'⊇': {
+		class: classScience,
+		order: 30,
+	},
+	'⊂': {
+		class: classScience,
+		order: 31,
+	},
+	'⊃': {
+		class: classScience,
+		order: 32,
+	},
+	'∪': {
+		class: classScience,
+		order: 33,
+	},
+	'∩': {
+		class: classScience,
+		order: 34,
+	},
+	'∧': {
+		class: classScience,
+		order: 35,
+	},
+	'∨': {
+		class: classScience,
+		order: 36,
+	},
+	'￢': {
+		class: classScience,
+		order: 37,
+	},
+	'⇒': {
+		class: classScience,
+		order: 38,
+	},
+	'⇔': {
+		class: classScience,
+		order: 39,
+	},
+	'∀': {
+		class: classScience,
+		order: 40,
+	},
+	'∃': {
+		class: classScience,
+		order: 41,
+	},
+	'∴': {
+		class: classScience,
+		order: 42,
+	},
+	'∵': {
+		class: classScience,
+		order: 43,
+	},
+	'♂': {
+		class: classScience,
+		order: 44,
+	},
+	'♀': {
+		class: classScience,
+		order: 45,
+	},
 
-	// TODO: 一般記号
+	// 一般記号
+	'＃': {
+		class: classGeneral,
+		order: 1,
+	},
+	'＆': {
+		class: classGeneral,
+		order: 1,
+	},
+	'＊': {
+		class: classGeneral,
+		order: 1,
+	},
 
 	// TODO: 単位記号
 
