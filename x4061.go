@@ -1,3 +1,11 @@
+// Package jisx4061 implements [JIS X 4061] Japanese character string collation order.
+// It is commonly referred to as "辞書順(the dictionary order)", "50音順(the syllabic order), "あいうえお順(the a-i-u-e-o order)".
+//
+// The collation method is simple collation (単純照合), where comparisons are made according to basic collation rules (基本照合規則).
+// The Latin alphabet is processed, including macronised (マクロン付き文字) and circumflexed characters (サーカムフレックス付き文字).
+// The extended Kanji character class (拡張漢字クラス) is used for the Kanji character class.
+//
+// [JIS X 4061]: https://ja.wikipedia.org/wiki/%E6%97%A5%E6%9C%AC%E8%AA%9E%E6%96%87%E5%AD%97%E5%88%97%E7%85%A7%E5%90%88%E9%A0%86%E7%95%AA
 package jisx4061
 
 import (
@@ -291,7 +299,9 @@ func getAttr(s string, offset int) (attr1 attr, n int) {
 	return
 }
 
-func Less(a, b string) bool {
+// Less compares the strings a and b according to JIS X 4061.
+// if a < b it returns -1, if a > b it returns 1, and if a == b it returns 0.
+func Compare(a, b string) int {
 	var i, j int
 	// log.Printf("checking %s < %s", a, b)
 	// for i < len(a) && j < len(b) {
@@ -312,17 +322,17 @@ func Less(a, b string) bool {
 		j += n
 
 		if attrA.class != attrB.class {
-			return attrA.class < attrB.class
+			return compare(attrA.class, attrB.class)
 		}
 		if attrA.order != attrB.order {
-			return attrA.order < attrB.order
+			return compare(attrA.order, attrB.order)
 		}
 	}
 	if i >= len(a) && j < len(b) {
-		return true
+		return -1
 	}
 	if i < len(a) && j >= len(b) {
-		return false
+		return 1
 	}
 
 	i, j = 0, 0
@@ -333,14 +343,8 @@ func Less(a, b string) bool {
 		j += n
 
 		if attrA.voiced != attrB.voiced {
-			return attrA.voiced < attrB.voiced
+			return compare(attrA.voiced, attrB.voiced)
 		}
-	}
-	if i >= len(a) && j < len(b) {
-		return true
-	}
-	if i < len(a) && j >= len(b) {
-		return false
 	}
 
 	i, j = 0, 0
@@ -351,14 +355,8 @@ func Less(a, b string) bool {
 		j += n
 
 		if attrA.symbolType != attrB.symbolType {
-			return attrA.symbolType < attrB.symbolType
+			return compare(attrA.symbolType, attrB.symbolType)
 		}
-	}
-	if i >= len(a) && j < len(b) {
-		return true
-	}
-	if i < len(a) && j >= len(b) {
-		return false
 	}
 
 	i, j = 0, 0
@@ -369,14 +367,8 @@ func Less(a, b string) bool {
 		j += n
 
 		if attrA.kanaType != attrB.kanaType {
-			return attrA.kanaType < attrB.kanaType
+			return compare(attrA.kanaType, attrB.kanaType)
 		}
-	}
-	if i >= len(a) && j < len(b) {
-		return true
-	}
-	if i < len(a) && j >= len(b) {
-		return false
 	}
 
 	i, j = 0, 0
@@ -387,14 +379,8 @@ func Less(a, b string) bool {
 		j += n
 
 		if attrA.diacriticalMark != attrB.diacriticalMark {
-			return attrA.diacriticalMark < attrB.diacriticalMark
+			return compare(attrA.diacriticalMark, attrB.diacriticalMark)
 		}
-	}
-	if i >= len(a) && j < len(b) {
-		return true
-	}
-	if i < len(a) && j >= len(b) {
-		return false
 	}
 
 	i, j = 0, 0
@@ -405,14 +391,23 @@ func Less(a, b string) bool {
 		j += n
 
 		if attrA.letterCase != attrB.letterCase {
-			return attrA.letterCase < attrB.letterCase
+			return compare(attrA.letterCase, attrB.letterCase)
 		}
 	}
-	if i >= len(a) && j < len(b) {
-		return true
+	return 0
+}
+
+func compare[T ~int](a, b T) int {
+	if a < b {
+		return -1
 	}
-	if i < len(a) && j >= len(b) {
-		return false
+	if a > b {
+		return 1
 	}
-	return false
+	return 0
+}
+
+// Less compares the strings a and b according to JIS X 4061 and returns the result a < b.
+func Less(a, b string) bool {
+	return Compare(a, b) < 0
 }
