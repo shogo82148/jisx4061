@@ -60,9 +60,9 @@ const (
 type letterCase int
 
 const (
-	letterCaseNone  = iota
-	letterCaseLower // 小文字
-	letterCaseUpper // 大文字
+	letterCaseNone  letterCase = iota
+	letterCaseLower            // 小文字
+	letterCaseUpper            // 大文字
 )
 
 type attr struct {
@@ -283,23 +283,17 @@ func getAttr(s string, offset int) (attr attr, n int) {
 func Less(a, b string) bool {
 	var i, j int
 	// log.Printf("checking %s < %s", a, b)
-	for i < len(a) && j < len(b) {
-		attrA, n := getAttr(a, i)
-		i += n
-		attrB, n := getAttr(b, j)
-		j += n
+	// for i < len(a) && j < len(b) {
+	// 	attrA, n := getAttr(a, i)
+	// 	i += n
+	// 	attrB, n := getAttr(b, j)
+	// 	j += n
 
-		// log.Printf("%#v", attrA)
-		// log.Printf("%#v", attrB)
+	// 	log.Printf("%#v", attrA)
+	// 	log.Printf("%#v", attrB)
+	// }
 
-		if attrA.class != attrB.class {
-			return attrA.class < attrB.class
-		}
-		if attrA.order != attrB.order {
-			return attrA.order < attrB.order
-		}
-	}
-
+	i, j = 0, 0
 	for i < len(a) && j < len(b) {
 		attrA, n := getAttr(a, i)
 		i += n
@@ -409,5 +403,5 @@ func Less(a, b string) bool {
 	if i < len(a) && j >= len(b) {
 		return false
 	}
-	return i >= len(a) && j < len(b)
+	return false
 }
