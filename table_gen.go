@@ -97,87 +97,87 @@ var table = map[rune]attr{
 	},
 	'’': {
 		class: classBracket,
-		order: 1,
+		order: 2,
 	},
 	'“': {
 		class: classBracket,
-		order: 1,
+		order: 3,
 	},
 	'”': {
 		class: classBracket,
-		order: 1,
-	},
-	'〈': {
-		class: classBracket,
-		order: 1,
-	},
-	'〉': {
-		class: classBracket,
-		order: 1,
-	},
-	'《': {
-		class: classBracket,
-		order: 1,
-	},
-	'》': {
-		class: classBracket,
-		order: 1,
-	},
-	'「': {
-		class: classBracket,
-		order: 1,
-	},
-	'」': {
-		class: classBracket,
-		order: 1,
-	},
-	'『': {
-		class: classBracket,
-		order: 1,
-	},
-	'』': {
-		class: classBracket,
-		order: 1,
-	},
-	'【': {
-		class: classBracket,
-		order: 1,
-	},
-	'】': {
-		class: classBracket,
-		order: 1,
-	},
-	'〔': {
-		class: classBracket,
-		order: 1,
-	},
-	'〕': {
-		class: classBracket,
-		order: 1,
+		order: 4,
 	},
 	'（': {
 		class: classBracket,
-		order: 1,
+		order: 5,
 	},
 	'）': {
 		class: classBracket,
-		order: 1,
+		order: 6,
+	},
+	'〔': {
+		class: classBracket,
+		order: 7,
+	},
+	'〕': {
+		class: classBracket,
+		order: 8,
 	},
 	'［': {
 		class: classBracket,
-		order: 1,
+		order: 9,
 	},
 	'］': {
 		class: classBracket,
-		order: 1,
+		order: 10,
 	},
 	'｛': {
 		class: classBracket,
-		order: 1,
+		order: 11,
 	},
 	'｝': {
 		class: classBracket,
-		order: 1,
+		order: 12,
+	},
+	'〈': {
+		class: classBracket,
+		order: 13,
+	},
+	'〉': {
+		class: classBracket,
+		order: 14,
+	},
+	'《': {
+		class: classBracket,
+		order: 15,
+	},
+	'》': {
+		class: classBracket,
+		order: 16,
+	},
+	'「': {
+		class: classBracket,
+		order: 17,
+	},
+	'」': {
+		class: classBracket,
+		order: 18,
+	},
+	'『': {
+		class: classBracket,
+		order: 19,
+	},
+	'』': {
+		class: classBracket,
+		order: 20,
+	},
+	'【': {
+		class: classBracket,
+		order: 21,
+	},
+	'】': {
+		class: classBracket,
+		order: 22,
 	},
 	'＋': {
 		class: classScience,
@@ -363,13 +363,193 @@ var table = map[rune]attr{
 		class: classGeneral,
 		order: 1,
 	},
-	'＆': {
+	'#': {
 		class: classGeneral,
 		order: 1,
 	},
+	'＆': {
+		class: classGeneral,
+		order: 2,
+	},
+	'&': {
+		class: classGeneral,
+		order: 2,
+	},
+	'＠': {
+		class: classGeneral,
+		order: 3,
+	},
+	'@': {
+		class: classGeneral,
+		order: 3,
+	},
 	'＊': {
 		class: classGeneral,
+		order: 4,
+	},
+	'*': {
+		class: classGeneral,
+		order: 4,
+	},
+	'§': {
+		class: classGeneral,
+		order: 5,
+	},
+	'¶': {
+		class: classGeneral,
+		order: 6,
+	},
+	'※': {
+		class: classGeneral,
+		order: 7,
+	},
+	'†': {
+		class: classGeneral,
+		order: 8,
+	},
+	'‡': {
+		class: classGeneral,
+		order: 9,
+	},
+	'☆': {
+		class: classGeneral,
+		order: 10,
+	},
+	'★': {
+		class: classGeneral,
+		order: 11,
+	},
+	'○': {
+		class: classGeneral,
+		order: 12,
+	},
+	'●': {
+		class: classGeneral,
+		order: 13,
+	},
+	'◎': {
+		class: classGeneral,
+		order: 14,
+	},
+	'◇': {
+		class: classGeneral,
+		order: 15,
+	},
+	'◆': {
+		class: classGeneral,
+		order: 16,
+	},
+	'□': {
+		class: classGeneral,
+		order: 17,
+	},
+	'■': {
+		class: classGeneral,
+		order: 18,
+	},
+	'△': {
+		class: classGeneral,
+		order: 19,
+	},
+	'▲': {
+		class: classGeneral,
+		order: 20,
+	},
+	'▽': {
+		class: classGeneral,
+		order: 21,
+	},
+	'▼': {
+		class: classGeneral,
+		order: 22,
+	},
+	'〒': {
+		class: classGeneral,
+		order: 23,
+	},
+	'→': {
+		class: classGeneral,
+		order: 24,
+	},
+	'←': {
+		class: classGeneral,
+		order: 25,
+	},
+	'↑': {
+		class: classGeneral,
+		order: 26,
+	},
+	'↓': {
+		class: classGeneral,
+		order: 27,
+	},
+	'♯': {
+		class: classGeneral,
+		order: 28,
+	},
+	'♭': {
+		class: classGeneral,
+		order: 29,
+	},
+	'♪': {
+		class: classGeneral,
+		order: 30,
+	},
+	'°': {
+		class: classUnit,
 		order: 1,
+	},
+	'′': {
+		class: classUnit,
+		order: 2,
+	},
+	'″': {
+		class: classUnit,
+		order: 3,
+	},
+	'℃': {
+		class: classUnit,
+		order: 4,
+	},
+	'￥': {
+		class: classUnit,
+		order: 5,
+	},
+	'¥': {
+		class: classUnit,
+		order: 5,
+	},
+	'＄': {
+		class: classUnit,
+		order: 6,
+	},
+	'$': {
+		class: classUnit,
+		order: 6,
+	},
+	'￠': {
+		class: classUnit,
+		order: 7,
+	},
+	'￡': {
+		class: classUnit,
+		order: 8,
+	},
+	'％': {
+		class: classUnit,
+		order: 9,
+	},
+	'%': {
+		class: classUnit,
+		order: 9,
+	},
+	'‰': {
+		class: classUnit,
+		order: 10,
+	},
+	'Å': {
+		class: classUnit,
+		order: 11,
 	},
 	'0': {
 		class: classNumber,
@@ -450,6 +630,462 @@ var table = map[rune]attr{
 	'９': {
 		class: classNumber,
 		order: 10,
+	},
+	'α': {
+		class: classSymbol,
+		order: 1,
+	},
+	'β': {
+		class: classSymbol,
+		order: 2,
+	},
+	'γ': {
+		class: classSymbol,
+		order: 3,
+	},
+	'δ': {
+		class: classSymbol,
+		order: 4,
+	},
+	'ε': {
+		class: classSymbol,
+		order: 5,
+	},
+	'ζ': {
+		class: classSymbol,
+		order: 6,
+	},
+	'η': {
+		class: classSymbol,
+		order: 7,
+	},
+	'θ': {
+		class: classSymbol,
+		order: 8,
+	},
+	'ι': {
+		class: classSymbol,
+		order: 9,
+	},
+	'κ': {
+		class: classSymbol,
+		order: 10,
+	},
+	'λ': {
+		class: classSymbol,
+		order: 11,
+	},
+	'μ': {
+		class: classSymbol,
+		order: 12,
+	},
+	'ν': {
+		class: classSymbol,
+		order: 13,
+	},
+	'ξ': {
+		class: classSymbol,
+		order: 14,
+	},
+	'ο': {
+		class: classSymbol,
+		order: 15,
+	},
+	'π': {
+		class: classSymbol,
+		order: 16,
+	},
+	'ρ': {
+		class: classSymbol,
+		order: 17,
+	},
+	'σ': {
+		class: classSymbol,
+		order: 18,
+	},
+	'τ': {
+		class: classSymbol,
+		order: 19,
+	},
+	'υ': {
+		class: classSymbol,
+		order: 20,
+	},
+	'φ': {
+		class: classSymbol,
+		order: 21,
+	},
+	'χ': {
+		class: classSymbol,
+		order: 22,
+	},
+	'ψ': {
+		class: classSymbol,
+		order: 23,
+	},
+	'ω': {
+		class: classSymbol,
+		order: 24,
+	},
+	'Α': {
+		class: classSymbol,
+		order: 25,
+	},
+	'Β': {
+		class: classSymbol,
+		order: 26,
+	},
+	'Γ': {
+		class: classSymbol,
+		order: 27,
+	},
+	'Δ': {
+		class: classSymbol,
+		order: 28,
+	},
+	'Ε': {
+		class: classSymbol,
+		order: 29,
+	},
+	'Ζ': {
+		class: classSymbol,
+		order: 30,
+	},
+	'Η': {
+		class: classSymbol,
+		order: 31,
+	},
+	'Θ': {
+		class: classSymbol,
+		order: 32,
+	},
+	'Ι': {
+		class: classSymbol,
+		order: 33,
+	},
+	'Κ': {
+		class: classSymbol,
+		order: 34,
+	},
+	'Λ': {
+		class: classSymbol,
+		order: 35,
+	},
+	'Μ': {
+		class: classSymbol,
+		order: 36,
+	},
+	'Ν': {
+		class: classSymbol,
+		order: 37,
+	},
+	'Ξ': {
+		class: classSymbol,
+		order: 38,
+	},
+	'Ο': {
+		class: classSymbol,
+		order: 39,
+	},
+	'Π': {
+		class: classSymbol,
+		order: 40,
+	},
+	'Ρ': {
+		class: classSymbol,
+		order: 41,
+	},
+	'Σ': {
+		class: classSymbol,
+		order: 42,
+	},
+	'Τ': {
+		class: classSymbol,
+		order: 43,
+	},
+	'Υ': {
+		class: classSymbol,
+		order: 44,
+	},
+	'Φ': {
+		class: classSymbol,
+		order: 45,
+	},
+	'Χ': {
+		class: classSymbol,
+		order: 46,
+	},
+	'Ψ': {
+		class: classSymbol,
+		order: 47,
+	},
+	'Ω': {
+		class: classSymbol,
+		order: 48,
+	},
+	'а': {
+		class: classSymbol,
+		order: 49,
+	},
+	'б': {
+		class: classSymbol,
+		order: 50,
+	},
+	'в': {
+		class: classSymbol,
+		order: 51,
+	},
+	'г': {
+		class: classSymbol,
+		order: 52,
+	},
+	'д': {
+		class: classSymbol,
+		order: 53,
+	},
+	'е': {
+		class: classSymbol,
+		order: 54,
+	},
+	'ё': {
+		class: classSymbol,
+		order: 55,
+	},
+	'ж': {
+		class: classSymbol,
+		order: 56,
+	},
+	'з': {
+		class: classSymbol,
+		order: 57,
+	},
+	'и': {
+		class: classSymbol,
+		order: 58,
+	},
+	'й': {
+		class: classSymbol,
+		order: 59,
+	},
+	'к': {
+		class: classSymbol,
+		order: 60,
+	},
+	'л': {
+		class: classSymbol,
+		order: 61,
+	},
+	'м': {
+		class: classSymbol,
+		order: 62,
+	},
+	'н': {
+		class: classSymbol,
+		order: 63,
+	},
+	'о': {
+		class: classSymbol,
+		order: 64,
+	},
+	'п': {
+		class: classSymbol,
+		order: 65,
+	},
+	'р': {
+		class: classSymbol,
+		order: 66,
+	},
+	'с': {
+		class: classSymbol,
+		order: 67,
+	},
+	'т': {
+		class: classSymbol,
+		order: 68,
+	},
+	'у': {
+		class: classSymbol,
+		order: 69,
+	},
+	'ф': {
+		class: classSymbol,
+		order: 70,
+	},
+	'х': {
+		class: classSymbol,
+		order: 71,
+	},
+	'ц': {
+		class: classSymbol,
+		order: 72,
+	},
+	'ч': {
+		class: classSymbol,
+		order: 73,
+	},
+	'ш': {
+		class: classSymbol,
+		order: 74,
+	},
+	'щ': {
+		class: classSymbol,
+		order: 75,
+	},
+	'ъ': {
+		class: classSymbol,
+		order: 76,
+	},
+	'ы': {
+		class: classSymbol,
+		order: 77,
+	},
+	'ь': {
+		class: classSymbol,
+		order: 78,
+	},
+	'э': {
+		class: classSymbol,
+		order: 79,
+	},
+	'ю': {
+		class: classSymbol,
+		order: 80,
+	},
+	'я': {
+		class: classSymbol,
+		order: 81,
+	},
+	'А': {
+		class: classSymbol,
+		order: 82,
+	},
+	'Б': {
+		class: classSymbol,
+		order: 83,
+	},
+	'В': {
+		class: classSymbol,
+		order: 84,
+	},
+	'Г': {
+		class: classSymbol,
+		order: 85,
+	},
+	'Д': {
+		class: classSymbol,
+		order: 86,
+	},
+	'Е': {
+		class: classSymbol,
+		order: 87,
+	},
+	'Ё': {
+		class: classSymbol,
+		order: 88,
+	},
+	'Ж': {
+		class: classSymbol,
+		order: 89,
+	},
+	'З': {
+		class: classSymbol,
+		order: 90,
+	},
+	'И': {
+		class: classSymbol,
+		order: 91,
+	},
+	'Й': {
+		class: classSymbol,
+		order: 92,
+	},
+	'К': {
+		class: classSymbol,
+		order: 93,
+	},
+	'Л': {
+		class: classSymbol,
+		order: 94,
+	},
+	'М': {
+		class: classSymbol,
+		order: 95,
+	},
+	'Н': {
+		class: classSymbol,
+		order: 96,
+	},
+	'О': {
+		class: classSymbol,
+		order: 97,
+	},
+	'П': {
+		class: classSymbol,
+		order: 98,
+	},
+	'Р': {
+		class: classSymbol,
+		order: 99,
+	},
+	'С': {
+		class: classSymbol,
+		order: 100,
+	},
+	'Т': {
+		class: classSymbol,
+		order: 101,
+	},
+	'У': {
+		class: classSymbol,
+		order: 102,
+	},
+	'Ф': {
+		class: classSymbol,
+		order: 103,
+	},
+	'Х': {
+		class: classSymbol,
+		order: 104,
+	},
+	'Ц': {
+		class: classSymbol,
+		order: 105,
+	},
+	'Ч': {
+		class: classSymbol,
+		order: 106,
+	},
+	'Ш': {
+		class: classSymbol,
+		order: 107,
+	},
+	'Щ': {
+		class: classSymbol,
+		order: 108,
+	},
+	'Ъ': {
+		class: classSymbol,
+		order: 109,
+	},
+	'Ы': {
+		class: classSymbol,
+		order: 110,
+	},
+	'Ь': {
+		class: classSymbol,
+		order: 111,
+	},
+	'Э': {
+		class: classSymbol,
+		order: 112,
+	},
+	'Ю': {
+		class: classSymbol,
+		order: 113,
+	},
+	'Я': {
+		class: classSymbol,
+		order: 114,
 	},
 	'a': {
 		class:           classAlphabet,
