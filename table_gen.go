@@ -97,87 +97,87 @@ var table = map[rune]attr{
 	},
 	'’': {
 		class: classBracket,
-		order: 1,
+		order: 2,
 	},
 	'“': {
 		class: classBracket,
-		order: 1,
+		order: 3,
 	},
 	'”': {
 		class: classBracket,
-		order: 1,
-	},
-	'〈': {
-		class: classBracket,
-		order: 1,
-	},
-	'〉': {
-		class: classBracket,
-		order: 1,
-	},
-	'《': {
-		class: classBracket,
-		order: 1,
-	},
-	'》': {
-		class: classBracket,
-		order: 1,
-	},
-	'「': {
-		class: classBracket,
-		order: 1,
-	},
-	'」': {
-		class: classBracket,
-		order: 1,
-	},
-	'『': {
-		class: classBracket,
-		order: 1,
-	},
-	'』': {
-		class: classBracket,
-		order: 1,
-	},
-	'【': {
-		class: classBracket,
-		order: 1,
-	},
-	'】': {
-		class: classBracket,
-		order: 1,
-	},
-	'〔': {
-		class: classBracket,
-		order: 1,
-	},
-	'〕': {
-		class: classBracket,
-		order: 1,
+		order: 4,
 	},
 	'（': {
 		class: classBracket,
-		order: 1,
+		order: 5,
 	},
 	'）': {
 		class: classBracket,
-		order: 1,
+		order: 6,
+	},
+	'〔': {
+		class: classBracket,
+		order: 7,
+	},
+	'〕': {
+		class: classBracket,
+		order: 8,
 	},
 	'［': {
 		class: classBracket,
-		order: 1,
+		order: 9,
 	},
 	'］': {
 		class: classBracket,
-		order: 1,
+		order: 10,
 	},
 	'｛': {
 		class: classBracket,
-		order: 1,
+		order: 11,
 	},
 	'｝': {
 		class: classBracket,
-		order: 1,
+		order: 12,
+	},
+	'〈': {
+		class: classBracket,
+		order: 13,
+	},
+	'〉': {
+		class: classBracket,
+		order: 14,
+	},
+	'《': {
+		class: classBracket,
+		order: 15,
+	},
+	'》': {
+		class: classBracket,
+		order: 16,
+	},
+	'「': {
+		class: classBracket,
+		order: 17,
+	},
+	'」': {
+		class: classBracket,
+		order: 18,
+	},
+	'『': {
+		class: classBracket,
+		order: 19,
+	},
+	'』': {
+		class: classBracket,
+		order: 20,
+	},
+	'【': {
+		class: classBracket,
+		order: 21,
+	},
+	'】': {
+		class: classBracket,
+		order: 22,
 	},
 	'＋': {
 		class: classScience,
@@ -365,10 +365,162 @@ var table = map[rune]attr{
 	},
 	'＆': {
 		class: classGeneral,
-		order: 1,
+		order: 2,
+	},
+	'＠': {
+		class: classGeneral,
+		order: 3,
 	},
 	'＊': {
 		class: classGeneral,
+		order: 4,
+	},
+	'§': {
+		class: classGeneral,
+		order: 5,
+	},
+	'¶': {
+		class: classGeneral,
+		order: 6,
+	},
+	'※': {
+		class: classGeneral,
+		order: 7,
+	},
+	'†': {
+		class: classGeneral,
+		order: 8,
+	},
+	'‡': {
+		class: classGeneral,
+		order: 9,
+	},
+	'☆': {
+		class: classGeneral,
+		order: 10,
+	},
+	'★': {
+		class: classGeneral,
+		order: 11,
+	},
+	'○': {
+		class: classGeneral,
+		order: 12,
+	},
+	'●': {
+		class: classGeneral,
+		order: 13,
+	},
+	'◎': {
+		class: classGeneral,
+		order: 14,
+	},
+	'◇': {
+		class: classGeneral,
+		order: 15,
+	},
+	'◆': {
+		class: classGeneral,
+		order: 16,
+	},
+	'□': {
+		class: classGeneral,
+		order: 17,
+	},
+	'■': {
+		class: classGeneral,
+		order: 18,
+	},
+	'△': {
+		class: classGeneral,
+		order: 19,
+	},
+	'▲': {
+		class: classGeneral,
+		order: 20,
+	},
+	'▽': {
+		class: classGeneral,
+		order: 21,
+	},
+	'▼': {
+		class: classGeneral,
+		order: 22,
+	},
+	'〒': {
+		class: classGeneral,
+		order: 23,
+	},
+	'→': {
+		class: classGeneral,
+		order: 24,
+	},
+	'←': {
+		class: classGeneral,
+		order: 25,
+	},
+	'↑': {
+		class: classGeneral,
+		order: 26,
+	},
+	'↓': {
+		class: classGeneral,
+		order: 27,
+	},
+	'♯': {
+		class: classGeneral,
+		order: 28,
+	},
+	'♭': {
+		class: classGeneral,
+		order: 29,
+	},
+	'♪': {
+		class: classGeneral,
+		order: 30,
+	},
+	'°': {
+		class: classUnit,
+		order: 1,
+	},
+	'′': {
+		class: classUnit,
+		order: 1,
+	},
+	'″': {
+		class: classUnit,
+		order: 1,
+	},
+	'℃': {
+		class: classUnit,
+		order: 1,
+	},
+	'￥': {
+		class: classUnit,
+		order: 1,
+	},
+	'＄': {
+		class: classUnit,
+		order: 1,
+	},
+	'￠': {
+		class: classUnit,
+		order: 1,
+	},
+	'￡': {
+		class: classUnit,
+		order: 1,
+	},
+	'％': {
+		class: classUnit,
+		order: 1,
+	},
+	'‰': {
+		class: classUnit,
+		order: 1,
+	},
+	'Å': {
+		class: classUnit,
 		order: 1,
 	},
 	'0': {
