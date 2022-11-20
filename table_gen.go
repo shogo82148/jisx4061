@@ -631,6 +631,198 @@ var table = map[rune]attr{
 		class: classNumber,
 		order: 10,
 	},
+	'α': {
+		class: classSymbol,
+		order: 1,
+	},
+	'β': {
+		class: classSymbol,
+		order: 2,
+	},
+	'γ': {
+		class: classSymbol,
+		order: 3,
+	},
+	'δ': {
+		class: classSymbol,
+		order: 4,
+	},
+	'ε': {
+		class: classSymbol,
+		order: 5,
+	},
+	'ζ': {
+		class: classSymbol,
+		order: 6,
+	},
+	'η': {
+		class: classSymbol,
+		order: 7,
+	},
+	'θ': {
+		class: classSymbol,
+		order: 8,
+	},
+	'ι': {
+		class: classSymbol,
+		order: 9,
+	},
+	'κ': {
+		class: classSymbol,
+		order: 10,
+	},
+	'λ': {
+		class: classSymbol,
+		order: 11,
+	},
+	'μ': {
+		class: classSymbol,
+		order: 12,
+	},
+	'ν': {
+		class: classSymbol,
+		order: 13,
+	},
+	'ξ': {
+		class: classSymbol,
+		order: 14,
+	},
+	'ο': {
+		class: classSymbol,
+		order: 15,
+	},
+	'π': {
+		class: classSymbol,
+		order: 16,
+	},
+	'ρ': {
+		class: classSymbol,
+		order: 17,
+	},
+	'σ': {
+		class: classSymbol,
+		order: 18,
+	},
+	'τ': {
+		class: classSymbol,
+		order: 19,
+	},
+	'υ': {
+		class: classSymbol,
+		order: 20,
+	},
+	'φ': {
+		class: classSymbol,
+		order: 21,
+	},
+	'χ': {
+		class: classSymbol,
+		order: 22,
+	},
+	'ψ': {
+		class: classSymbol,
+		order: 23,
+	},
+	'ω': {
+		class: classSymbol,
+		order: 24,
+	},
+	'Α': {
+		class: classSymbol,
+		order: 25,
+	},
+	'Β': {
+		class: classSymbol,
+		order: 26,
+	},
+	'Γ': {
+		class: classSymbol,
+		order: 27,
+	},
+	'Δ': {
+		class: classSymbol,
+		order: 28,
+	},
+	'Ε': {
+		class: classSymbol,
+		order: 29,
+	},
+	'Ζ': {
+		class: classSymbol,
+		order: 30,
+	},
+	'Η': {
+		class: classSymbol,
+		order: 31,
+	},
+	'Θ': {
+		class: classSymbol,
+		order: 32,
+	},
+	'Ι': {
+		class: classSymbol,
+		order: 33,
+	},
+	'Κ': {
+		class: classSymbol,
+		order: 34,
+	},
+	'Λ': {
+		class: classSymbol,
+		order: 35,
+	},
+	'Μ': {
+		class: classSymbol,
+		order: 36,
+	},
+	'Ν': {
+		class: classSymbol,
+		order: 37,
+	},
+	'Ξ': {
+		class: classSymbol,
+		order: 38,
+	},
+	'Ο': {
+		class: classSymbol,
+		order: 39,
+	},
+	'Π': {
+		class: classSymbol,
+		order: 40,
+	},
+	'Ρ': {
+		class: classSymbol,
+		order: 41,
+	},
+	'Σ': {
+		class: classSymbol,
+		order: 42,
+	},
+	'Τ': {
+		class: classSymbol,
+		order: 43,
+	},
+	'Υ': {
+		class: classSymbol,
+		order: 44,
+	},
+	'Φ': {
+		class: classSymbol,
+		order: 45,
+	},
+	'Χ': {
+		class: classSymbol,
+		order: 46,
+	},
+	'Ψ': {
+		class: classSymbol,
+		order: 47,
+	},
+	'Ω': {
+		class: classSymbol,
+		order: 48,
+	},
 	'a': {
 		class:           classAlphabet,
 		order:           1,
