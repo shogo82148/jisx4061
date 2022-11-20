@@ -823,6 +823,270 @@ var table = map[rune]attr{
 		class: classSymbol,
 		order: 48,
 	},
+	'а': {
+		class: classSymbol,
+		order: 49,
+	},
+	'б': {
+		class: classSymbol,
+		order: 50,
+	},
+	'в': {
+		class: classSymbol,
+		order: 51,
+	},
+	'г': {
+		class: classSymbol,
+		order: 52,
+	},
+	'д': {
+		class: classSymbol,
+		order: 53,
+	},
+	'е': {
+		class: classSymbol,
+		order: 54,
+	},
+	'ё': {
+		class: classSymbol,
+		order: 55,
+	},
+	'ж': {
+		class: classSymbol,
+		order: 56,
+	},
+	'з': {
+		class: classSymbol,
+		order: 57,
+	},
+	'и': {
+		class: classSymbol,
+		order: 58,
+	},
+	'й': {
+		class: classSymbol,
+		order: 59,
+	},
+	'к': {
+		class: classSymbol,
+		order: 60,
+	},
+	'л': {
+		class: classSymbol,
+		order: 61,
+	},
+	'м': {
+		class: classSymbol,
+		order: 62,
+	},
+	'н': {
+		class: classSymbol,
+		order: 63,
+	},
+	'о': {
+		class: classSymbol,
+		order: 64,
+	},
+	'п': {
+		class: classSymbol,
+		order: 65,
+	},
+	'р': {
+		class: classSymbol,
+		order: 66,
+	},
+	'с': {
+		class: classSymbol,
+		order: 67,
+	},
+	'т': {
+		class: classSymbol,
+		order: 68,
+	},
+	'у': {
+		class: classSymbol,
+		order: 69,
+	},
+	'ф': {
+		class: classSymbol,
+		order: 70,
+	},
+	'х': {
+		class: classSymbol,
+		order: 71,
+	},
+	'ц': {
+		class: classSymbol,
+		order: 72,
+	},
+	'ч': {
+		class: classSymbol,
+		order: 73,
+	},
+	'ш': {
+		class: classSymbol,
+		order: 74,
+	},
+	'щ': {
+		class: classSymbol,
+		order: 75,
+	},
+	'ъ': {
+		class: classSymbol,
+		order: 76,
+	},
+	'ы': {
+		class: classSymbol,
+		order: 77,
+	},
+	'ь': {
+		class: classSymbol,
+		order: 78,
+	},
+	'э': {
+		class: classSymbol,
+		order: 79,
+	},
+	'ю': {
+		class: classSymbol,
+		order: 80,
+	},
+	'я': {
+		class: classSymbol,
+		order: 81,
+	},
+	'А': {
+		class: classSymbol,
+		order: 82,
+	},
+	'Б': {
+		class: classSymbol,
+		order: 83,
+	},
+	'В': {
+		class: classSymbol,
+		order: 84,
+	},
+	'Г': {
+		class: classSymbol,
+		order: 85,
+	},
+	'Д': {
+		class: classSymbol,
+		order: 86,
+	},
+	'Е': {
+		class: classSymbol,
+		order: 87,
+	},
+	'Ё': {
+		class: classSymbol,
+		order: 88,
+	},
+	'Ж': {
+		class: classSymbol,
+		order: 89,
+	},
+	'З': {
+		class: classSymbol,
+		order: 90,
+	},
+	'И': {
+		class: classSymbol,
+		order: 91,
+	},
+	'Й': {
+		class: classSymbol,
+		order: 92,
+	},
+	'К': {
+		class: classSymbol,
+		order: 93,
+	},
+	'Л': {
+		class: classSymbol,
+		order: 94,
+	},
+	'М': {
+		class: classSymbol,
+		order: 95,
+	},
+	'Н': {
+		class: classSymbol,
+		order: 96,
+	},
+	'О': {
+		class: classSymbol,
+		order: 97,
+	},
+	'П': {
+		class: classSymbol,
+		order: 98,
+	},
+	'Р': {
+		class: classSymbol,
+		order: 99,
+	},
+	'С': {
+		class: classSymbol,
+		order: 100,
+	},
+	'Т': {
+		class: classSymbol,
+		order: 101,
+	},
+	'У': {
+		class: classSymbol,
+		order: 102,
+	},
+	'Ф': {
+		class: classSymbol,
+		order: 103,
+	},
+	'Х': {
+		class: classSymbol,
+		order: 104,
+	},
+	'Ц': {
+		class: classSymbol,
+		order: 105,
+	},
+	'Ч': {
+		class: classSymbol,
+		order: 106,
+	},
+	'Ш': {
+		class: classSymbol,
+		order: 107,
+	},
+	'Щ': {
+		class: classSymbol,
+		order: 108,
+	},
+	'Ъ': {
+		class: classSymbol,
+		order: 109,
+	},
+	'Ы': {
+		class: classSymbol,
+		order: 110,
+	},
+	'Ь': {
+		class: classSymbol,
+		order: 111,
+	},
+	'Э': {
+		class: classSymbol,
+		order: 112,
+	},
+	'Ю': {
+		class: classSymbol,
+		order: 113,
+	},
+	'Я': {
+		class: classSymbol,
+		order: 114,
+	},
 	'a': {
 		class:           classAlphabet,
 		order:           1,
