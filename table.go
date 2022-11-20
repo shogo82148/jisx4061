@@ -1621,7 +1621,7 @@ var table = map[rune]attr{
 	'ゞ': {
 		class:      classKana,
 		order:      49,
-		voiced:     voicedUnvoiced,
+		voiced:     voicedVoiced,
 		symbolType: symbolTypeRepeat,
 		kanaType:   kanaTypeHigagana,
 	},
