@@ -1,6 +1,8 @@
 package jisx4061
 
-import "unicode/utf8"
+import (
+	"unicode/utf8"
+)
 
 type class int
 
@@ -90,6 +92,7 @@ var vowelTable = map[rune]rune{
 	'ば': 'あ',
 	'ぱ': 'あ',
 	'ぁ': 'あ',
+	'ゃ': 'あ',
 	'ア': 'あ',
 	'カ': 'あ',
 	'サ': 'あ',
@@ -106,6 +109,7 @@ var vowelTable = map[rune]rune{
 	'バ': 'あ',
 	'パ': 'あ',
 	'ァ': 'あ',
+	'ャ': 'あ',
 
 	'い': 'い',
 	'き': 'い',
@@ -153,6 +157,7 @@ var vowelTable = map[rune]rune{
 	'ぶ': 'う',
 	'ぷ': 'う',
 	'ぅ': 'う',
+	'ゅ': 'う',
 	'ウ': 'う',
 	'ク': 'う',
 	'ス': 'う',
@@ -169,6 +174,7 @@ var vowelTable = map[rune]rune{
 	'プ': 'う',
 	'ゥ': 'う',
 	'ヴ': 'う',
+	'ュ': 'う',
 
 	'え': 'え',
 	'け': 'え',
@@ -217,6 +223,7 @@ var vowelTable = map[rune]rune{
 	'ぼ': 'お',
 	'ぽ': 'お',
 	'ぉ': 'お',
+	'ょ': 'お',
 	'オ': 'お',
 	'コ': 'お',
 	'ソ': 'お',
@@ -233,26 +240,28 @@ var vowelTable = map[rune]rune{
 	'ボ': 'お',
 	'ポ': 'お',
 	'ォ': 'お',
+	'ョ': 'お',
 
 	'ん': 'ん',
 	'ン': 'ん',
 }
 
 func getAttr(s string, offset int) (attr attr, n int) {
-	for n < len(s) {
+	for offset+n < len(s) {
 		var ok bool
 		r, m := utf8.DecodeRuneInString(s[offset+n:])
+		n += m
 		switch r {
 		case 'ー':
-			last, _ := utf8.DecodeLastRuneInString(s[:offset+n])
-			n += m
+			attr = table[r]
+			last, _ := utf8.DecodeLastRuneInString(s[:offset+n-m])
 			if v, ok := vowelTable[last]; ok {
-				attr = table[v]
+				attr.order = table[v].order
 			}
 			return
 		case 'ゝ', 'ゞ', 'ヽ', 'ヾ':
-			last, _ := utf8.DecodeLastRuneInString(s[:offset+n])
-			n += m
+			attr = table[r]
+			last, _ := utf8.DecodeLastRuneInString(s[:offset+n-m])
 			if last == 'ゝ' || last == 'ゞ' || last == 'ヽ' || last == 'ヾ' || last == 'ー' {
 				return
 			}
@@ -260,10 +269,9 @@ func getAttr(s string, offset int) (attr attr, n int) {
 			if !ok {
 				return
 			}
-			attr = attr0
+			attr.order = attr0.order
 			return
 		}
-		n += m
 		attr, ok = table[r]
 		if ok {
 			return
@@ -274,10 +282,27 @@ func getAttr(s string, offset int) (attr attr, n int) {
 
 func Less(a, b string) bool {
 	var i, j int
+	// log.Printf("checking %s < %s", a, b)
 	for i < len(a) && j < len(b) {
 		attrA, n := getAttr(a, i)
 		i += n
+		attrB, n := getAttr(b, j)
+		j += n
 
+		// log.Printf("%#v", attrA)
+		// log.Printf("%#v", attrB)
+
+		if attrA.class != attrB.class {
+			return attrA.class < attrB.class
+		}
+		if attrA.order != attrB.order {
+			return attrA.order < attrB.order
+		}
+	}
+
+	for i < len(a) && j < len(b) {
+		attrA, n := getAttr(a, i)
+		i += n
 		attrB, n := getAttr(b, j)
 		j += n
 
@@ -299,26 +324,90 @@ func Less(a, b string) bool {
 	for i < len(a) && j < len(b) {
 		attrA, n := getAttr(a, i)
 		i += n
-
 		attrB, n := getAttr(b, j)
 		j += n
 
 		if attrA.voiced != attrB.voiced {
 			return attrA.voiced < attrB.voiced
 		}
+	}
+	if i >= len(a) && j < len(b) {
+		return true
+	}
+	if i < len(a) && j >= len(b) {
+		return false
+	}
+
+	i, j = 0, 0
+	for i < len(a) && j < len(b) {
+		attrA, n := getAttr(a, i)
+		i += n
+		attrB, n := getAttr(b, j)
+		j += n
+
 		if attrA.symbolType != attrB.symbolType {
 			return attrA.symbolType < attrB.symbolType
 		}
+	}
+	if i >= len(a) && j < len(b) {
+		return true
+	}
+	if i < len(a) && j >= len(b) {
+		return false
+	}
+
+	i, j = 0, 0
+	for i < len(a) && j < len(b) {
+		attrA, n := getAttr(a, i)
+		i += n
+		attrB, n := getAttr(b, j)
+		j += n
+
 		if attrA.kanaType != attrB.kanaType {
 			return attrA.kanaType < attrB.kanaType
 		}
+	}
+	if i >= len(a) && j < len(b) {
+		return true
+	}
+	if i < len(a) && j >= len(b) {
+		return false
+	}
+
+	i, j = 0, 0
+	for i < len(a) && j < len(b) {
+		attrA, n := getAttr(a, i)
+		i += n
+		attrB, n := getAttr(b, j)
+		j += n
+
 		if attrA.diacriticalMark != attrB.diacriticalMark {
 			return attrA.diacriticalMark < attrB.diacriticalMark
 		}
+	}
+	if i >= len(a) && j < len(b) {
+		return true
+	}
+	if i < len(a) && j >= len(b) {
+		return false
+	}
+
+	i, j = 0, 0
+	for i < len(a) && j < len(b) {
+		attrA, n := getAttr(a, i)
+		i += n
+		attrB, n := getAttr(b, j)
+		j += n
+
 		if attrA.letterCase != attrB.letterCase {
 			return attrA.letterCase < attrB.letterCase
 		}
 	}
-
+	if i >= len(a) && j < len(b) {
+		return true
+	}
+	if i < len(a) && j >= len(b) {
+		return false
+	}
 	return i >= len(a) && j < len(b)
 }

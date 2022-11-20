@@ -1,11 +1,17 @@
 package jisx4061
 
-import "testing"
+import (
+	"testing"
+)
 
 func TestLess(t *testing.T) {
 	tests := [][]string{
-		// JIS X 4061-1996 5.1 例1.
-		{"さと", "さど", "さとう", "さどう", "さとうや", "サトー", "さとおや"},
+		// JIS X 4061-1996 参考2 適合性試験データ
+		{
+			"シャーレ", "シャイ", "シヤィ", "シャレ",
+			"ちょこ", "ちよこ", "チョコレート",
+			"てーた", "テータ", "テェタ", "てえた", "でーた", "データ", "デェタ", "でえた",
+		},
 	}
 	for _, tt := range tests {
 		for i, a := range tt {
