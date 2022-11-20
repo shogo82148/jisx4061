@@ -363,7 +363,15 @@ var table = map[rune]attr{
 		class: classGeneral,
 		order: 1,
 	},
+	'#': {
+		class: classGeneral,
+		order: 1,
+	},
 	'＆': {
+		class: classGeneral,
+		order: 2,
+	},
+	'&': {
 		class: classGeneral,
 		order: 2,
 	},
@@ -371,7 +379,15 @@ var table = map[rune]attr{
 		class: classGeneral,
 		order: 3,
 	},
+	'@': {
+		class: classGeneral,
+		order: 3,
+	},
 	'＊': {
+		class: classGeneral,
+		order: 4,
+	},
+	'*': {
 		class: classGeneral,
 		order: 4,
 	},
@@ -485,43 +501,55 @@ var table = map[rune]attr{
 	},
 	'′': {
 		class: classUnit,
-		order: 1,
+		order: 2,
 	},
 	'″': {
 		class: classUnit,
-		order: 1,
+		order: 3,
 	},
 	'℃': {
 		class: classUnit,
-		order: 1,
+		order: 4,
 	},
 	'￥': {
 		class: classUnit,
-		order: 1,
+		order: 5,
+	},
+	'¥': {
+		class: classUnit,
+		order: 5,
 	},
 	'＄': {
 		class: classUnit,
-		order: 1,
+		order: 6,
+	},
+	'$': {
+		class: classUnit,
+		order: 6,
 	},
 	'￠': {
 		class: classUnit,
-		order: 1,
+		order: 7,
 	},
 	'￡': {
 		class: classUnit,
-		order: 1,
+		order: 8,
 	},
 	'％': {
 		class: classUnit,
-		order: 1,
+		order: 9,
+	},
+	'%': {
+		class: classUnit,
+		order: 9,
 	},
 	'‰': {
 		class: classUnit,
-		order: 1,
+		order: 10,
 	},
 	'Å': {
 		class: classUnit,
-		order: 1,
+		order: 11,
 	},
 	'0': {
 		class: classNumber,
