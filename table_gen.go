@@ -3035,4 +3035,28 @@ var table = map[rune]attr{
 		symbolType: symbolTypeLongVowel,
 		kanaType:   kanaTypeKatakana,
 	},
+	'〃': {
+		class: classKanji,
+		order: 1,
+	},
+	'仝': {
+		class: classKanji,
+		order: 2,
+	},
+	'々': {
+		class: classKanji,
+		order: 3,
+	},
+	'〆': {
+		class: classKanji,
+		order: 4,
+	},
+	'〇': {
+		class: classKanji,
+		order: 5,
+	},
+	'〓': {
+		class: classGeta,
+		order: 1,
+	},
 }
