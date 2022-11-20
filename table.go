@@ -2111,6 +2111,42 @@ var table = map[rune]attr{
 		kanaType:   kanaTypeKatakana,
 	},
 
+	'パ': {
+		class:      classKana,
+		order:      26,
+		voiced:     voicedSemivoiced,
+		symbolType: symbolTypeUpper,
+		kanaType:   kanaTypeKatakana,
+	},
+	'ピ': {
+		class:      classKana,
+		order:      27,
+		voiced:     voicedSemivoiced,
+		symbolType: symbolTypeUpper,
+		kanaType:   kanaTypeKatakana,
+	},
+	'プ': {
+		class:      classKana,
+		order:      28,
+		voiced:     voicedSemivoiced,
+		symbolType: symbolTypeUpper,
+		kanaType:   kanaTypeKatakana,
+	},
+	'ペ': {
+		class:      classKana,
+		order:      29,
+		voiced:     voicedSemivoiced,
+		symbolType: symbolTypeUpper,
+		kanaType:   kanaTypeKatakana,
+	},
+	'ポ': {
+		class:      classKana,
+		order:      30,
+		voiced:     voicedSemivoiced,
+		symbolType: symbolTypeUpper,
+		kanaType:   kanaTypeKatakana,
+	},
+
 	'ァ': {
 		class:      classKana,
 		order:      1,
