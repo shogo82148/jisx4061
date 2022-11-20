@@ -251,6 +251,17 @@ func getAttr(s string, offset int) (attr attr, n int) {
 			}
 			return
 		case 'ゝ', 'ゞ', 'ヽ', 'ヾ':
+			last, _ := utf8.DecodeLastRuneInString(s[:offset+n])
+			n += m
+			if last == 'ゝ' || last == 'ゞ' || last == 'ヽ' || last == 'ヾ' || last == 'ー' {
+				return
+			}
+			attr0, ok := table[last]
+			if !ok {
+				return
+			}
+			attr = attr0
+			return
 		}
 		n += m
 		attr, ok = table[r]
