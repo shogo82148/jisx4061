@@ -9,7 +9,7 @@ type class int
 const (
 	classSpace      class = iota + 1 // スペース
 	classDescriptor                  // 記述記号
-	classBracket                     // 括弧
+	classBracket                     // 括弧記号
 	classScience                     // 学術記号
 	classGeneral                     // 一般記号
 	classUnit                        // 単位記号
@@ -36,16 +36,16 @@ const (
 	symbolTypeNone      = iota
 	symbolTypeLongVowel // 長音
 	symbolTypeLower     // 小文字
-	symbolTypeRepeat    // 繰りし記号
+	symbolTypeRepeat    // 繰返し記号
 	symbolTypeUpper     // 大文字
 )
 
 type kanaType int // 仮名種別
 
 const (
-	kanaTypeNone = iota
-	kanaTypeHigagana
-	kanaTypeKatakana
+	kanaTypeNone     = iota
+	kanaTypeHiragana // 平仮名
+	kanaTypeKatakana // 片仮名
 )
 
 // ダイアクリティカルマーク
@@ -68,11 +68,11 @@ const (
 type attr struct {
 	class           class
 	order           int
+	diacriticalMark diacriticalMark
+	letterCase      letterCase
 	voiced          voiced
 	symbolType      symbolType
 	kanaType        kanaType
-	diacriticalMark diacriticalMark
-	letterCase      letterCase
 }
 
 var vowelTable = map[rune]rune{
