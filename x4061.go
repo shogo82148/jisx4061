@@ -256,40 +256,36 @@ var vowelTable = map[rune]rune{
 	'ン': 'ん',
 }
 
-func getAttr(s string, offset int) (attr1 attr, n int) {
-	for offset+n < len(s) {
+func getAttr(s string, last rune) (attr0 attr, r rune, n int) {
+	for n < len(s) {
 		var ok bool
-		r, m := utf8.DecodeRuneInString(s[offset+n:])
+		var m int
+		r, m = utf8.DecodeRuneInString(s[n:])
 		n += m
 		switch r {
 		case 'ー':
-			attr1 = table[r]
-			last, _ := utf8.DecodeLastRuneInString(s[:offset+n-m])
+			attr0 = table[r]
 			if v, ok := vowelTable[last]; ok {
-				attr1.order = table[v].order
+				attr0.order = table[v].order
 			}
 			return
 		case 'ゝ', 'ゞ', 'ヽ', 'ヾ':
-			attr1 = table[r]
-			last, _ := utf8.DecodeLastRuneInString(s[:offset+n-m])
-			if last == 'ゝ' || last == 'ゞ' || last == 'ヽ' || last == 'ヾ' || last == 'ー' {
-				return
+			attr0 = table[r]
+			if last != 'ゝ' && last != 'ゞ' && last != 'ヽ' && last != 'ヾ' {
+				a := table[last]
+				attr0.class = a.class
+				attr0.order = a.order
 			}
-			attr0, ok := table[last]
-			if !ok {
-				return
-			}
-			attr1.order = attr0.order
 			return
 		}
-		attr1, ok = table[r]
+		attr0, ok = table[r]
 		if ok {
 			return
 		}
 
 		// handle CJK Unified Ideographs
 		if 0x4e00 <= r && r <= 0x10000 {
-			attr1 = attr{
+			attr0 = attr{
 				class: classKanji,
 				order: int(r),
 			}
@@ -302,7 +298,9 @@ func getAttr(s string, offset int) (attr1 attr, n int) {
 // Less compares the strings a and b according to JIS X 4061.
 // if a < b it returns -1, if a > b it returns 1, and if a == b it returns 0.
 func Compare(a, b string) int {
+	var n int
 	var i, j int
+	var lastA, lastB rune
 	// log.Printf("checking %s < %s", a, b)
 	// for i < len(a) && j < len(b) {
 	// 	attrA, n := getAttr(a, i)
@@ -315,10 +313,12 @@ func Compare(a, b string) int {
 	// }
 
 	i, j = 0, 0
+	lastA, lastB = 0, 0
 	for i < len(a) && j < len(b) {
-		attrA, n := getAttr(a, i)
+		var attrA, attrB attr
+		attrA, lastA, n = getAttr(a[i:], lastA)
 		i += n
-		attrB, n := getAttr(b, j)
+		attrB, lastB, n = getAttr(b[j:], lastB)
 		j += n
 
 		if attrA.class != attrB.class {
@@ -336,10 +336,12 @@ func Compare(a, b string) int {
 	}
 
 	i, j = 0, 0
+	lastA, lastB = 0, 0
 	for i < len(a) && j < len(b) {
-		attrA, n := getAttr(a, i)
+		var attrA, attrB attr
+		attrA, lastA, n = getAttr(a[i:], lastA)
 		i += n
-		attrB, n := getAttr(b, j)
+		attrB, lastB, n = getAttr(b[j:], lastB)
 		j += n
 
 		if attrA.voiced != attrB.voiced {
@@ -348,10 +350,12 @@ func Compare(a, b string) int {
 	}
 
 	i, j = 0, 0
+	lastA, lastB = 0, 0
 	for i < len(a) && j < len(b) {
-		attrA, n := getAttr(a, i)
+		var attrA, attrB attr
+		attrA, lastA, n = getAttr(a[i:], lastA)
 		i += n
-		attrB, n := getAttr(b, j)
+		attrB, lastB, n = getAttr(b[j:], lastB)
 		j += n
 
 		if attrA.symbolType != attrB.symbolType {
@@ -360,10 +364,12 @@ func Compare(a, b string) int {
 	}
 
 	i, j = 0, 0
+	lastA, lastB = 0, 0
 	for i < len(a) && j < len(b) {
-		attrA, n := getAttr(a, i)
+		var attrA, attrB attr
+		attrA, lastA, n = getAttr(a[i:], lastA)
 		i += n
-		attrB, n := getAttr(b, j)
+		attrB, lastB, n = getAttr(b[j:], lastB)
 		j += n
 
 		if attrA.kanaType != attrB.kanaType {
@@ -372,10 +378,12 @@ func Compare(a, b string) int {
 	}
 
 	i, j = 0, 0
+	lastA, lastB = 0, 0
 	for i < len(a) && j < len(b) {
-		attrA, n := getAttr(a, i)
+		var attrA, attrB attr
+		attrA, lastA, n = getAttr(a[i:], lastA)
 		i += n
-		attrB, n := getAttr(b, j)
+		attrB, lastB, n = getAttr(b[j:], lastB)
 		j += n
 
 		if attrA.diacriticalMark != attrB.diacriticalMark {
@@ -384,10 +392,12 @@ func Compare(a, b string) int {
 	}
 
 	i, j = 0, 0
+	lastA, lastB = 0, 0
 	for i < len(a) && j < len(b) {
-		attrA, n := getAttr(a, i)
+		var attrA, attrB attr
+		attrA, lastA, n = getAttr(a[i:], lastA)
 		i += n
-		attrB, n := getAttr(b, j)
+		attrB, lastB, n = getAttr(b[j:], lastB)
 		j += n
 
 		if attrA.letterCase != attrB.letterCase {
