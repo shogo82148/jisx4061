@@ -248,21 +248,21 @@ var vowelTable = map[rune]rune{
 	'ン': 'ん',
 }
 
-func getAttr(s string, offset int) (attr attr, n int) {
+func getAttr(s string, offset int) (attr1 attr, n int) {
 	for offset+n < len(s) {
 		var ok bool
 		r, m := utf8.DecodeRuneInString(s[offset+n:])
 		n += m
 		switch r {
 		case 'ー':
-			attr = table[r]
+			attr1 = table[r]
 			last, _ := utf8.DecodeLastRuneInString(s[:offset+n-m])
 			if v, ok := vowelTable[last]; ok {
-				attr.order = table[v].order
+				attr1.order = table[v].order
 			}
 			return
 		case 'ゝ', 'ゞ', 'ヽ', 'ヾ':
-			attr = table[r]
+			attr1 = table[r]
 			last, _ := utf8.DecodeLastRuneInString(s[:offset+n-m])
 			if last == 'ゝ' || last == 'ゞ' || last == 'ヽ' || last == 'ヾ' || last == 'ー' {
 				return
@@ -271,11 +271,20 @@ func getAttr(s string, offset int) (attr attr, n int) {
 			if !ok {
 				return
 			}
-			attr.order = attr0.order
+			attr1.order = attr0.order
 			return
 		}
-		attr, ok = table[r]
+		attr1, ok = table[r]
 		if ok {
+			return
+		}
+
+		// handle CJK Unified Ideographs
+		if 0x4e00 <= r && r <= 0x10000 {
+			attr1 = attr{
+				class: classKanji,
+				order: int(r),
+			}
 			return
 		}
 	}
