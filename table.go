@@ -651,6 +651,68 @@ var table = map[rune]attr{
 		letterCase:      letterCaseUpper,
 	},
 
+	'Ā': {
+		class:           classAlphabet,
+		order:           1,
+		diacriticalMark: diacriticalMarkMacron,
+		letterCase:      letterCaseUpper,
+	},
+	'Ī': {
+		class:           classAlphabet,
+		order:           9,
+		diacriticalMark: diacriticalMarkMacron,
+		letterCase:      letterCaseUpper,
+	},
+	'Ū': {
+		class:           classAlphabet,
+		order:           21,
+		diacriticalMark: diacriticalMarkMacron,
+		letterCase:      letterCaseUpper,
+	},
+	'Ē': {
+		class:           classAlphabet,
+		order:           5,
+		diacriticalMark: diacriticalMarkMacron,
+		letterCase:      letterCaseUpper,
+	},
+	'Ō': {
+		class:           classAlphabet,
+		order:           15,
+		diacriticalMark: diacriticalMarkMacron,
+		letterCase:      letterCaseUpper,
+	},
+
+	'Â': {
+		class:           classAlphabet,
+		order:           1,
+		diacriticalMark: diacriticalMarkCircumflexAccent,
+		letterCase:      letterCaseUpper,
+	},
+	'Î': {
+		class:           classAlphabet,
+		order:           9,
+		diacriticalMark: diacriticalMarkCircumflexAccent,
+		letterCase:      letterCaseUpper,
+	},
+	'Û': {
+		class:           classAlphabet,
+		order:           21,
+		diacriticalMark: diacriticalMarkCircumflexAccent,
+		letterCase:      letterCaseUpper,
+	},
+	'Ê': {
+		class:           classAlphabet,
+		order:           5,
+		diacriticalMark: diacriticalMarkCircumflexAccent,
+		letterCase:      letterCaseUpper,
+	},
+	'Ô': {
+		class:           classAlphabet,
+		order:           15,
+		diacriticalMark: diacriticalMarkCircumflexAccent,
+		letterCase:      letterCaseUpper,
+	},
+
 	// 仮名
 	'あ': {
 		class:      classKana,
