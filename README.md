@@ -32,4 +32,4 @@ It is commonly referred to as "辞書順(the dictionary order)", "50音順(the s
 
 ## REFERENCES
 
-- [[JIS X 4061](https://ja.wikipedia.org/wiki/%E6%97%A5%E6%9C%AC%E8%AA%9E%E6%96%87%E5%AD%97%E5%88%97%E7%85%A7%E5%90%88%E9%A0%86%E7%95%AA)
+- [JIS X 4061](https://ja.wikipedia.org/wiki/%E6%97%A5%E6%9C%AC%E8%AA%9E%E6%96%87%E5%AD%97%E5%88%97%E7%85%A7%E5%90%88%E9%A0%86%E7%95%AA)
